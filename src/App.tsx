@@ -1,12 +1,10 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { Navbar } from "./components"
+import { Orders, Customers, Products } from "./pages"
 
-import { Navbar } from "./components";
-import { Orders, Customers, Products } from "./pages";
+import "./App.css"
 
-import "./App.css";
-
-const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <BrowserRouter>
@@ -30,7 +28,7 @@ const App: React.FC = () => {
         </div>
       </BrowserRouter>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
