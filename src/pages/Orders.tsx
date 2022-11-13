@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 
 interface IProps {}
 
-const Orders: React.FC<IProps> = () => {
-  return <div>Orders</div>;
-};
+const Orders = (props: IProps) => {
+  return <div>Orders</div>
+}
 
-export default Orders;
+export default Orders
