@@ -1,6 +1,6 @@
 import React from "react"
 
-interface IProps {}
+type IProps = {}
 
 const Products = (props: IProps) => {
   return <div>Products</div>
