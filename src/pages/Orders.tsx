@@ -1,8 +1,8 @@
 import React from "react"
 
-type IProps = {}
+type Props = {}
 
-const Orders = (props: IProps) => {
+const Orders = (props: Props) => {
   return <div>Orders</div>
 }
 
