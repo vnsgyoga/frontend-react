@@ -1,10 +1,9 @@
-import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-
 import { Navbar } from "./components"
 import { Orders, Customers, Products } from "./pages"
 
 import "./App.css"
+import Home from "./pages/Home"
 
 const App = () => {
   return (
@@ -21,6 +20,7 @@ const App = () => {
             <div>
               <Routes>
                 {/* Pages */}
+                <Route path="/" element={<Home />} />
                 <Route path="/orders" element={<Orders />} />
                 <Route path="/employees" element={<Products />} />
                 <Route path="/customers" element={<Customers />} />
