@@ -116,7 +116,7 @@ PR reviewer:
 
 ### Branch name
 
-- Should be copied when create branch on Jira in the format: `<Issue key>-<Isuue summary>`.\
+- Should be copied when create branch on Jira in the format: `<Issue key>-<Issue summary>`.\
 For example: `VSKY-35-update-readme-for-frontend-react`
 
 ### CSS
