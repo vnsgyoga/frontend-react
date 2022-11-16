@@ -24,25 +24,21 @@ const Orders = (props: Props) => {
         <div className="card">
           <div className="image bg-yellow-200">This is imaginary image</div>
           <div className="m-4">
-            <span className="font-bold text-gray-500">
-              Grilled Chicken Salad
-            </span>
+            <span className="font-bold text-gray-500">Pizza Coladar</span>
             <span className="block text-gray-500 text-sm">Recipe by Unkle</span>
           </div>
           <div className="badge">
-            <span>25 mins</span>
+            <span>35 mins</span>
           </div>
         </div>
         <div className="card">
           <div className="image bg-blue-200">This is imaginary image</div>
           <div className="m-4">
-            <span className="font-bold text-gray-500">
-              Grilled Chicken Salad
-            </span>
+            <span className="font-bold text-gray-500">Grilled Porkrip</span>
             <span className="block text-gray-500 text-sm">Recipe by Unkle</span>
           </div>
           <div className="badge">
-            <span>25 mins</span>
+            <span>15 mins</span>
           </div>
         </div>
       </main>
