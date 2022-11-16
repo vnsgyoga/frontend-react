@@ -25,7 +25,7 @@ const Orders = (props: Props) => {
           <div className="image bg-yellow-200">This is imaginary image</div>
           <div className="m-4">
             <span className="font-bold text-gray-500">Pizza Coladar</span>
-            <span className="block text-gray-500 text-sm">Recipe by Unkle</span>
+            <span className="block text-gray-500 text-sm">Recipe by 4P's</span>
           </div>
           <div className="badge">
             <span>35 mins</span>
@@ -35,7 +35,7 @@ const Orders = (props: Props) => {
           <div className="image bg-blue-200">This is imaginary image</div>
           <div className="m-4">
             <span className="font-bold text-gray-500">Grilled Porkrip</span>
-            <span className="block text-gray-500 text-sm">Recipe by Unkle</span>
+            <span className="block text-gray-500 text-sm">Recipe by VT</span>
           </div>
           <div className="badge">
             <span>15 mins</span>

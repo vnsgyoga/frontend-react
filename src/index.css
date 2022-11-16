@@ -82,7 +82,7 @@
 
 /* testing apply directive */
 .card {
-  @apply bg-white rounded overflow-hidden shadow-md max-w-md mx-4 relative;
+  @apply bg-white rounded overflow-hidden shadow-md w-52 max-w-md mx-4 relative;
 }
 
 .badge {
