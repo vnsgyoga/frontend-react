@@ -79,3 +79,16 @@
     @apply cursor-default pointer-events-none opacity-40;
   }
 }
+
+/* testing apply directive */
+.card {
+  @apply bg-white h-64 rounded overflow-hidden shadow-md relative;
+}
+
+.badge {
+  @apply bg-white text-xs uppercase font-bold rounded-full absolute top-0 ml-2 p-2 mt-2;
+}
+
+.image {
+  @apply w-full h-44 flex justify-center items-center;
+}
