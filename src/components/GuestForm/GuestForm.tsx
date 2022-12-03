@@ -1,104 +1,70 @@
 import classNames from "classnames"
+import axios from "axios"
 
 import "./GuestForm.css"
+import { ChangeEvent, FormEvent, useState } from "react"
 
 const GuestForm = () => {
-  const submitLeadToSFDC = async () => {
-    const requestOptions: any = {
-      method: "POST",
-      // mode: "no-cors",
-    }
+  const defaultFormData = {
+    name: "",
+    email: "",
+    phone: "",
+    city: "",
+  }
 
-    const oid = (document.getElementById("oid") as HTMLInputElement).value
-    const retUrl = (document.getElementById("retURL") as HTMLInputElement).value
-    const firstName = (
-      document.getElementById("first_name") as HTMLInputElement
-    ).value
-    const lastName = (document.getElementById("last_name") as HTMLInputElement)
-      .value
-    const email = (document.getElementById("email") as HTMLInputElement).value
-    const company = (document.getElementById("company") as HTMLInputElement)
-      .value
-    const title = (document.getElementById("title") as HTMLInputElement).value
-    const city = (document.getElementById("city") as HTMLInputElement).value
-    const state = (document.getElementById("state") as HTMLInputElement).value
-    const country = (document.getElementById("city") as HTMLInputElement).value
+  const [formData, setFormData] = useState(defaultFormData)
 
-    fetch(
-      `https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&oid=${oid}&retURL=${retUrl}&first_name=${firstName}&last_name=${lastName}&company=${company}&title=${title}&email=${email}&city=${city}&state=${state}&country=${country}`,
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error))
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement
+    setFormData({ ...formData, [target.name]: target.value })
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault() // prevents the submit button from refreshing the page
+    axios
+      .post("/submit", {
+        formData,
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    setFormData(defaultFormData)
   }
 
   return (
     <form
-      // action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
-      // method="POST"
       className={classNames("contact-form flex flex-col bg-blue")}
+      onSubmit={(e) => handleSubmit(e)}
     >
-      <input type="hidden" name="oid" value="00D5i000007Ew61" />
-      <input type="hidden" name="retURL" value="http://localhost:3000" />
-
       <div>
-        <label htmlFor="first_name">First Name</label>
+        <label htmlFor="name">Your Name</label>
         <input
-          id="first_name"
+          id="name"
           maxLength={40}
-          name="first_name"
+          name="name"
           size={20}
           type="text"
           required={true}
+          value={formData.name}
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div>
-        <label htmlFor="last_name">Last Name</label>
-        <input
-          id="last_name"
-          maxLength={80}
-          name="last_name"
-          size={20}
-          type="text"
-          required={true}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Your Email</label>
         <input
           id="email"
           maxLength={80}
           name="email"
           size={20}
-          type="text"
+          type="email"
           required={true}
+          value={formData.email}
+          onChange={(e) => handleChange(e)}
         />
       </div>
-      <div>
-        <label htmlFor="company">Company</label>
-        <input
-          id="company"
-          maxLength={40}
-          name="company"
-          size={20}
-          type="text"
-          required={true}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          maxLength={40}
-          name="title"
-          size={20}
-          type="text"
-          required={true}
-        />
-      </div>
-
       <div>
         <label htmlFor="city">City</label>
         <input
@@ -108,37 +74,24 @@ const GuestForm = () => {
           size={20}
           type="text"
           required={true}
+          value={formData.city}
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div>
-        <label htmlFor="state">State/Province</label>
+        <label htmlFor="state">Phone Number</label>
         <input
-          id="state"
+          id="phone"
           maxLength={20}
-          name="state"
+          name="phone"
           size={20}
-          type="text"
+          type="tel"
           required={true}
+          value={formData.phone}
+          onChange={(e) => handleChange(e)}
         />
       </div>
-
-      <div>
-        <label htmlFor="country">Country</label>
-        <input
-          id="country"
-          maxLength={40}
-          name="country"
-          size={20}
-          type="text"
-          required={true}
-        />
-      </div>
-      <button
-        type="submit"
-        name="submit"
-        className="w-auto"
-        onClick={() => submitLeadToSFDC()}
-      >
+      <button type="submit" name="submit" className="w-auto">
         Submit
       </button>
     </form>
