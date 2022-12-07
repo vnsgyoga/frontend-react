@@ -6,13 +6,18 @@ import { ChangeEvent, FormEvent, useState } from "react"
 
 const GuestForm = () => {
   const defaultFormData = {
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     city: "",
+    companyName: "",
   }
 
-  const [formData, setFormData] = useState(defaultFormData)
+  const [formData, setFormData] = useState<any>({})
+  const [error, setError] = useState(null)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement
@@ -21,17 +26,21 @@ const GuestForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault() // prevents the submit button from refreshing the page
+    setIsLoading(true)
     axios
-      .post("/submit", {
-        formData,
+      .post("/submit", formData)
+      .then((res) => {
+        console.log(res)
+        setIsSubmitted(true)
+        setError(null)
+        setIsLoading(false)
+        setFormData(defaultFormData)
       })
-      .then(function (response) {
-        console.log(response)
+      .catch((err) => {
+        console.log(err)
+        setIsLoading(false)
+        setError(err)
       })
-      .catch(function (error) {
-        console.log(error)
-      })
-    setFormData(defaultFormData)
   }
 
   return (
@@ -40,15 +49,28 @@ const GuestForm = () => {
       onSubmit={(e) => handleSubmit(e)}
     >
       <div>
-        <label htmlFor="name">Your Name</label>
+        <label htmlFor="firstName">First Name</label>
         <input
-          id="name"
+          id="firstName"
           maxLength={40}
-          name="name"
+          name="firstName"
           size={20}
           type="text"
           required={true}
-          value={formData.name}
+          value={formData.firstName}
+          onChange={(e) => handleChange(e)}
+        />
+      </div>
+      <div>
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          id="lastName"
+          maxLength={40}
+          name="lastName"
+          size={20}
+          type="text"
+          required={true}
+          value={formData.lastName}
           onChange={(e) => handleChange(e)}
         />
       </div>
@@ -79,7 +101,7 @@ const GuestForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="state">Phone Number</label>
+        <label htmlFor="phone">Phone Number</label>
         <input
           id="phone"
           maxLength={20}
@@ -91,9 +113,25 @@ const GuestForm = () => {
           onChange={(e) => handleChange(e)}
         />
       </div>
+      <div>
+        <label htmlFor="companyName">Company Name</label>
+        <input
+          id="companyName"
+          maxLength={40}
+          name="companyName"
+          size={20}
+          type="text"
+          required={true}
+          value={formData.companyName}
+          onChange={(e) => handleChange(e)}
+        />
+      </div>
       <button type="submit" name="submit" className="w-auto">
-        Submit
+        {isLoading ? "Loading" : "Submit"}
+        {/* Submit */}
       </button>
+      {error && <div>Submitted Failed</div>}
+      {isSubmitted && <div>Submitted successfully!</div>}
     </form>
   )
 }
