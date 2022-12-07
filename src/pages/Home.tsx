@@ -3,7 +3,11 @@ import GuestForm from "../components/GuestForm/GuestForm"
 const Home = () => {
   return (
     <div>
-      <h1>Web-to-Lead Form</h1>
+      <h1>
+        Love to hear from you,
+        <br />
+        Get in touch 👋
+      </h1>
       <GuestForm />
     </div>
   )
