@@ -1,4 +1,4 @@
-import GuestForm from "../components/GuestForm/GuestForm"
+import ContactForm from "../components/ContactForm/ContactForm"
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
         <br />
         Get in touch 👋
       </h1>
-      <GuestForm />
+      <ContactForm />
     </div>
   )
 }

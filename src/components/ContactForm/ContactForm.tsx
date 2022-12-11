@@ -1,10 +1,10 @@
 import classNames from "classnames"
 import axios from "axios"
 
-import "./GuestForm.css"
+import "./ContactForm.css"
 import { ChangeEvent, FormEvent, useState } from "react"
 
-const GuestForm = () => {
+const ContactForm = () => {
   const defaultFormData = {
     firstName: "",
     lastName: "",
@@ -14,7 +14,14 @@ const GuestForm = () => {
     companyName: "",
   }
 
-  const [formData, setFormData] = useState<any>({})
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    city: "",
+    companyName: "",
+  })
   const [error, setError] = useState(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -128,7 +135,6 @@ const GuestForm = () => {
       </div>
       <button type="submit" name="submit" className="w-auto">
         {isLoading ? "Loading" : "Submit"}
-        {/* Submit */}
       </button>
       {error && <div>Submitted Failed</div>}
       {isSubmitted && <div>Submitted successfully!</div>}
@@ -136,4 +142,4 @@ const GuestForm = () => {
   )
 }
 
-export default GuestForm
+export default ContactForm
