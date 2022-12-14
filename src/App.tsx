@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Navbar } from "./components"
 import { Orders, Customers, Products } from "./pages"
 
 import "./App.css"
@@ -12,9 +11,7 @@ const App = () => {
         <div className="flex relative">
           {/* Navbar */}
           <div className="dark:bg-main-bg bg-main-bg min-h-screen w-full">
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
-              <Navbar />
-            </div>
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"></div>
 
             {/* Routes */}
             <div>
