@@ -3,7 +3,9 @@ import ContactForm from "../components/ContactForm"
 const Home = () => {
   return (
     <div>
-      <ContactForm />
+      <div id="contact">
+        <ContactForm />
+      </div>
     </div>
   )
 }

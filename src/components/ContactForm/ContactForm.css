@@ -28,10 +28,6 @@
   outline: none;
 }
 
-.contact-form__form-group--label {
-  font-weight: bold;
-}
-
 .contact-form__btn {
   width: 100%;
   max-width: 90%;

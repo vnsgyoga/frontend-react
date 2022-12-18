@@ -68,10 +68,7 @@ const ContactForm = () => {
       </p>
       <div className="contact-form__fields">
         <div className="contact-form__form-group">
-          <label
-            htmlFor="firstName"
-            className="contact-form__form-group--label"
-          >
+          <label htmlFor="firstName" className="font-bold">
             First Name
           </label>
           <input
@@ -86,7 +83,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label htmlFor="lastName" className="contact-form__form-group--label">
+          <label htmlFor="lastName" className="font-bold">
             Last Name
           </label>
           <input
@@ -101,7 +98,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label htmlFor="email" className="contact-form__form-group--label">
+          <label htmlFor="email" className="font-bold">
             Your Email
           </label>
           <input
@@ -116,7 +113,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label htmlFor="phone" className="contact-form__form-group--label">
+          <label htmlFor="phone" className="font-bold">
             Phone Number
           </label>
           <input
@@ -131,7 +128,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label htmlFor="city" className="contact-form__form-group--label">
+          <label htmlFor="city" className="font-bold">
             City
           </label>
           <input
@@ -146,10 +143,7 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label
-            htmlFor="companyName"
-            className="contact-form__form-group--label"
-          >
+          <label htmlFor="companyName" className="font-bold">
             Company Name
           </label>
           <input
