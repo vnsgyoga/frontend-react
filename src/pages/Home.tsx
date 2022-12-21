@@ -1,14 +1,11 @@
-import GuestForm from "../components/GuestForm/GuestForm"
+import ContactForm from "../components/ContactForm"
 
 const Home = () => {
   return (
     <div>
-      <h1>
-        Love to hear from you,
-        <br />
-        Get in touch 👋
-      </h1>
-      <GuestForm />
+      <div id="contact">
+        <ContactForm />
+      </div>
     </div>
   )
 }
