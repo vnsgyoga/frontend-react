@@ -15,7 +15,7 @@ const App = () => {
         </div>
 
         {/* Routes */}
-        <div className="hello my-4">
+        <div className="my-4">
           <Routes>
             {/* Pages */}
             <Route path="/" element={<Home />} />
