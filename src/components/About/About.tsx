@@ -1,8 +1,8 @@
 const About = () => {
   return (
-    <div className="p-20">
+    <div className="h-screen text-center">
       {/* Please add HTML content as you go */}
-      <p>About section</p>
+      <h1>About section</h1>
     </div>
   )
 }
