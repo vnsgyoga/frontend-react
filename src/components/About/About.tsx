@@ -1,6 +1,7 @@
+
 const About = () => {
   return (
-    <div className="h-screen text-center">
+    <div className="h-screen text-center border">
       {/* Please add HTML content as you go */}
       <h1>About section</h1>
     </div>
