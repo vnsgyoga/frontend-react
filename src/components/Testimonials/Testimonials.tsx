@@ -29,7 +29,7 @@ const Testimonials = () => {
   ]
 
   return (
-    <div className="min-h-[700px] bg-[#FFF8FC] flex items-center justify-center">
+    <div className="min-h-[400px] md:min-h-[700px] bg-[#FFF8FC] flex items-center justify-center">
       <ImageSlider slides={slides} />
     </div>
   )
