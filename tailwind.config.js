@@ -7,8 +7,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      display: ["Open Sans", "sans-serif"],
-      body: ["Open Sans", "sans-serif"],
+      display: ["Helvetica Neue", "sans-serif"],
+      body: ["Helvetica Neue", "sans-serif"],
+      secondary: ["Playfair Display", "serif"],
     },
     extend: {
       fontSize: {
