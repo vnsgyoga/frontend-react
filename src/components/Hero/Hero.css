@@ -1,9 +1,5 @@
 /* Uitilities */
 
-.line-space {
-    padding-bottom: 15px;
-}
-
 .shadow-effect {
     text-shadow: 0 0 27px rgba(0, 0, 0, 0.57);
 }
@@ -44,6 +40,14 @@
     height: 50px;
     border-radius: 25px;
     font-size: 20px;
+}
+
+.hero-btn:hover {
+    width: 250px;
+    height: 52px;
+    font-size: 22px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 10);
+    transition: all 0.1s ease-out;
 }
 
 @media (max-width: 768px) {
