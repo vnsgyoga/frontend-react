@@ -23,7 +23,7 @@ This GitHub repo hosts the code for frontend app.
 <h2 id="prerequisites">Prerequisites to contributing</h2>
 
 Familiarity with git, GitHub, ReactJS, TypeScript etc. --
-[Resources on docs](https://chestnut-stock-4f5.notion.site/Tech-Stack-e99314710abd437fae145cac5380e93e)
+[Resources on docs](https://vnsg.notion.site/Tech-Stack-e99314710abd437fae145cac5380e93e)
 
 ---
 <h2 id="environment-setup">Environment setup</h2>
@@ -48,7 +48,7 @@ You will also see any lint errors in the console.
 ---
 <h2 id="github-developement-process">GitHub development process</h2>
 
-For details, see the [Git workflow documentation](https://chestnut-stock-4f5.notion.site/Git-Workflow-cb2efab16709492ab7911d440fa83ee5)
+For details, see the [Git workflow documentation](https://vnsg.notion.site/Git-Workflow-cb2efab16709492ab7911d440fa83ee5)
 
 1. Ask the engineering circle to add you to <https://github.com/vnsgyoga/frontend-react>
 
@@ -61,8 +61,8 @@ For details, see the [Git workflow documentation](https://chestnut-stock-4f5.not
 3. Before working on a task, do the following steps:
 
    ```
-   # Return to the main branch
-   git checkout main
+   # Return to the develop branch
+   git checkout develop
    # Get the latest changes from remote
    git pull
    # Create a new branch for your new changes
@@ -89,7 +89,7 @@ For details, see the [Git workflow documentation](https://chestnut-stock-4f5.not
 ---
 <h2 id="code-reviews">Code reviews</h2>
 
-For details, see the [Code review guide](https://chestnut-stock-4f5.notion.site/Code-Review-f164761b75204477a1801d38ce84a50d).
+For details, see the [Code review guide](https://vnsg.notion.site/Code-Review-f164761b75204477a1801d38ce84a50d).
 
 If you are new to code reviews, you can skim a few op-eds about the process on
 the internet. General guidelines:
@@ -133,4 +133,4 @@ To ensure your project’s code stays simple, readable, and easy to contribute t
   
 ### Check your own diff
 
-Before pushing your changes to the repository, make sure you check your own diff. For details, see the [Code review guide](https://chestnut-stock-4f5.notion.site/Code-Review-f164761b75204477a1801d38ce84a50d)
+Before pushing your changes to the repository, make sure you check your own diff. For details, see the [Code review guide](https://vnsg.notion.site/Code-Review-f164761b75204477a1801d38ce84a50d)
