@@ -1,8 +1,84 @@
+/* Uitilities */
+
+.shadow-effect {
+    text-shadow: 0 0 27px rgba(0, 0, 0, 0.57);
+}
+
+/* Start Styling */
+
 .background {
-    color: black;
+    background-image: url("../../assets/images/hero/careerbliss.jpg");
+    background-position: right 0 center;
+    background-size: cover;
+    color: white;
+}
+
+.hero-section-content {
+    font-family: Helvetica;
+    text-align: left;
+    margin-left: 140px;
 }
 
 .brand-name {
-    font-size: 40px;
-    color: white;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 74px;
+    text-transform: uppercase;
+}
+
+.hero-section-paragraph {
+    max-width: 450px;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 31px;
+    letter-spacing: 0.005em;
+}
+
+.hero-btn {
+    background-color: #EC7545;
+    width: 248px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.hero-btn:hover {
+    width: 250px;
+    height: 52px;
+    font-size: 22px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 10);
+    transition: all 0.1s ease-out;
+}
+
+@media (max-width: 768px) {
+    .hero-section-content {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .hero-section-paragraph {
+        max-width: 100%;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 390px) {
+    .background {
+        background-position: left 500px center;
+    }
+
+    .hero-section-content {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .hero-section-content > h1 {
+        font-size: 45px;
+    }
+    .hero-section-paragraph {
+        max-width: 100%;
+        font-size: 20px;
+    }
 }

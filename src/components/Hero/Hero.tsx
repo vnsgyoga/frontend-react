@@ -1,9 +1,14 @@
+import "./Hero.css"
+
+
 const Hero = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center background">
-      <h1 className="brand-name">Career Bliss</h1>
-      <p>Empower your career & academic with focus, balance and joy</p>
-      <button>Contact Us</button>
+    <div className="w-full h-screen flex justify-center flex-col background">
+      <div className="hero-section-content">
+        <h1 className="brand-name pb-[15px] shadow-effect">Career Bliss</h1>
+        <p className="hero-section-paragraph pb-[15px] shadow-effect">Empower your career & academic with focus, balance and joy</p>
+        <button className="hero-btn">Contact Us</button>
+      </div>
     </div>
   )
 }
