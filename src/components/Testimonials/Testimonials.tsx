@@ -22,7 +22,7 @@ const Testimonials = () => {
     {
       imgUrl: image3,
       script: `“Career Bliss has been one of the best decisions I have made in my professional life. I wasn't sure what career path I wanted to take, so I came across Career Bliss and decided to give it a try. It was amazing! They helped me find my passion in life and gave me all the information on how to get there.”`,
-      author: "Diane",
+      author: "Diane Hampton",
       position: "Project Manager",
       company: "Solution Tech",
     },

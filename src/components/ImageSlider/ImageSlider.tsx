@@ -34,9 +34,11 @@ const ImageSlider = ({ slides }: Props) => {
 
   useEffect(() => {
     if (isClicked) {
-      setTimeout(() => {
+      const resetIsClicked = setTimeout(() => {
         setIsClicked(false)
       }, 1200)
+
+      return () => clearTimeout(resetIsClicked)
     }
   }, [isClicked])
 
