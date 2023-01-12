@@ -134,5 +134,3 @@ To ensure your project’s code stays simple, readable, and easy to contribute t
 ### Check your own diff
 
 Before pushing your changes to the repository, make sure you check your own diff. For details, see the [Code review guide](https://vnsg.notion.site/Code-Review-f164761b75204477a1801d38ce84a50d)
-
----
