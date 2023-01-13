@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25em;
+}
+
+.header > svg {
+  fill: white;
+}
+
+.header > svg > path {
+  fill: white;
+}
+
+.header > svg > g {
+  fill: white;
+}
+
+.header > svg > g > path {
+  fill: white;
+}
+
+.logo {
+  object-fit: cover;
+  width: 100px;
+  height: 50px;
+}
