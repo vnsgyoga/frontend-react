@@ -43,8 +43,7 @@
 }
 
 .hero-btn:hover {
-    width: 250px;
-    height: 52px;
+    scale: 1.01;
     font-size: 22px;
     text-shadow: 0 0 5px rgba(255, 255, 255, 10);
     transition: all 0.1s ease-out;
