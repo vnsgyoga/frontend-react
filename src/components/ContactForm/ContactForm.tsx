@@ -1,9 +1,10 @@
+import { ChangeEvent, FormEvent, SetStateAction, useState } from "react"
 import classNames from "classnames"
 import axios from "axios"
+import Icon from "../Icon/Icon"
+import countries from "../../constants/countries.json"
 
 import "./ContactForm.css"
-import { ChangeEvent, FormEvent, useState } from "react"
-import Icon from "../Icon/Icon"
 
 const ContactForm = () => {
   const defaultFormData = {
@@ -23,6 +24,7 @@ const ContactForm = () => {
     city: "",
     companyName: "",
   })
+
   const [error, setError] = useState(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -30,6 +32,10 @@ const ContactForm = () => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement
     setFormData({ ...formData, [target.name]: target.value })
+  }
+
+  const handleSelect = (e: any) => {
+    setFormData({ ...formData, city: e.target.value })
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -80,6 +86,7 @@ const ContactForm = () => {
             required={true}
             value={formData.firstName}
             onChange={(e) => handleChange(e)}
+            placeholder="John"
           />
         </div>
         <div className="contact-form__form-group">
@@ -95,6 +102,7 @@ const ContactForm = () => {
             required={true}
             value={formData.lastName}
             onChange={(e) => handleChange(e)}
+            placeholder="Doe"
           />
         </div>
         <div className="contact-form__form-group">
@@ -110,6 +118,7 @@ const ContactForm = () => {
             required={true}
             value={formData.email}
             onChange={(e) => handleChange(e)}
+            placeholder="johndoe@email.com"
           />
         </div>
         <div className="contact-form__form-group">
@@ -125,21 +134,7 @@ const ContactForm = () => {
             required={true}
             value={formData.phone}
             onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="contact-form__form-group">
-          <label htmlFor="city" className="font-bold">
-            City
-          </label>
-          <input
-            id="city"
-            maxLength={40}
-            name="city"
-            size={20}
-            type="text"
-            required={true}
-            value={formData.city}
-            onChange={(e) => handleChange(e)}
+            placeholder="Your phone number"
           />
         </div>
         <div className="contact-form__form-group">
@@ -155,7 +150,29 @@ const ContactForm = () => {
             required={true}
             value={formData.companyName}
             onChange={(e) => handleChange(e)}
+            placeholder="Your company name"
           />
+        </div>
+        <div className="contact-form__form-group">
+          <label htmlFor="country" className="font-bold">
+            Location
+          </label>
+          <select
+            id="country"
+            name="country"
+            required={true}
+            defaultValue=""
+            onChange={(e) => handleSelect(e)}
+          >
+            <option value="" disabled>
+              Select your country
+            </option>
+            {countries.map((country) => (
+              <option key={country.id} value={country.name}>
+                {country.name}
+              </option>
+            ))}
+          </select>
         </div>
         <button type="submit" name="submit" className="contact-form__btn">
           {isLoading ? "Loading" : "Send"}

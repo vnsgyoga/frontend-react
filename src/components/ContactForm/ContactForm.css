@@ -23,7 +23,8 @@
   padding: 0.5em;
 }
 
-.contact-form__form-group input:focus {
+.contact-form__form-group input:focus,
+select:focus {
   border: 2px solid #333;
   outline: none;
 }
@@ -39,4 +40,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contact-form__form-group select {
+  height: 40px;
 }
