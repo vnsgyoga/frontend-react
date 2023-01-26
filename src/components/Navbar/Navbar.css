@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+#nav-menu {
+    margin: 0 80px;
+}
+
+.link {
+    color: white;
+    padding: 0 30px;
+    font-weight: bold;
+    transition: 0.7 ease;
+}
+
+.link:hover {
+    color: #EC7545;
+}
+
+#hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger i {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    #nav-menu {
+        position: fixed;
+        top: 25px;
+        right: -900px;
+        height: 100vh;
+        width: 300px;
+        background-color: #2B3241;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    #nav-menu.active {
+        right: -90px; 
+    }
+
+    .link {
+        padding: 15px 0;
+    }
+
+    #hamburger {
+        display: block;
+        z-index: 9999;
+        position: absolute;
+        top: 20px;
+        right: 220px;
+    }
+}
