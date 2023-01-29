@@ -1,7 +1,6 @@
 .footer {
   background-color: #2b3241;
   color: #ffffff;
-  font-family: Helvetica;
   font-weight: 700;
   width: 100%;
   display: flex;
@@ -25,7 +24,6 @@
 }
 
 .footer-link-home {
-  font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -40,7 +38,6 @@
 }
 
 .footer-link-about {
-  font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -55,7 +52,6 @@
 }
 
 .footer-link-contact {
-  font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -89,7 +85,6 @@
   padding-top: 30px;
 }
 .career2023 {
-  font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -103,7 +98,6 @@
 }
 
 .policy {
-  font-family: "Helvetica";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
