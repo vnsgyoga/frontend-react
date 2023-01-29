@@ -1,0 +1,142 @@
+.footer {
+  background-color: #2b3241;
+  color: #ffffff;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.footer-title {
+  font-style: normal;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  max-width: 90%;
+}
+
+.footer-link-home {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  padding-top: 30px;
+  color: #ffffff;
+}
+
+.footer-link-about {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+.footer-link-contact {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+.footer-logo {
+  display: flex;
+  left: 243px;
+  top: 397px;
+  padding-top: 30px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  margin: 0 15px 5px 0;
+  max-width: 90%;
+}
+
+.sign {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.career2023 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: left;
+  text-align: left;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.policy {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+  text-transform: capitalize;
+  color: #ffffff;
+  margin-right: 30%;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .footer-container {
+    max-width: 100%;
+    font-size: 26px;
+  }
+  
+  .policy {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .footer {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .footer-container {
+    max-width: 100%;
+    font-size: 26px;
+  }
+}
