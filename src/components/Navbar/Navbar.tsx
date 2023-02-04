@@ -1,27 +1,26 @@
 import { Link } from "react-router-dom"
-import { Component } from "react"
+import Icon from "../Icon/Icon"
+import { useState } from "react"
 import "./Navbar.css"
 
-class Navbar extends Component {
-  state={ clicked : false };
-  handleOnclick = () => {
-    this.setState({clicked:!this.state.clicked})
-  }
-
-  render() {
-  return (
-    <div className="flex justify-between">
-      <div id="nav-menu" className={this.state.clicked ? "#nav-menu active" : "#nav-menu"}>
-      <Link to="/" className="link">Home</Link>
-      <Link to="#about" className="link">About</Link>
-      <Link to="#contact" className="link">Contact</Link>
+const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+    function handleChange() {
+      setMenuOpen(!menuOpen);
+    }
+    return (
+      <div className="flex justify-between">
+        <div className={menuOpen ? "nav-links" : "nav-links expanded"}>
+        <Link to="/" className="link">Home</Link>
+        <Link to="#about" className="link">About</Link>
+        <Link to="#contact" className="link">Contact</Link>
+        </div>
+        <button className={menuOpen ? "nav-button" : "nav-button close" } onClick={handleChange}>
+          <Icon name="hamburger-menu"/>
+        </button>
       </div>
-      <div id="hamburger" onClick={this.handleOnclick}>
-        <i id="bar" className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
-      </div>
-    </div>
-  )
-  }
+    )
+  
 }
 
 export default Navbar
