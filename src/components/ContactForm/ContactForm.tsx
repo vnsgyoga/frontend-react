@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, SetStateAction, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import classNames from "classnames"
 import axios from "axios"
 import Icon from "../Icon/Icon"
@@ -12,7 +12,7 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    city: "",
+    location: "",
     companyName: "",
   }
 
@@ -21,7 +21,7 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    city: "",
+    location: "",
     companyName: "",
   })
 
@@ -35,7 +35,7 @@ const ContactForm = () => {
   }
 
   const handleSelect = (e: any) => {
-    setFormData({ ...formData, city: e.target.value })
+    setFormData({ ...formData, location: e.target.value })
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -44,14 +44,12 @@ const ContactForm = () => {
     axios
       .post("/submit", formData)
       .then((res) => {
-        console.log(res)
         setIsSubmitted(true)
         setError(null)
         setIsLoading(false)
         setFormData(defaultFormData)
       })
       .catch((err) => {
-        console.log(err)
         setIsLoading(false)
         setError(err)
       })
@@ -67,11 +65,11 @@ const ContactForm = () => {
       className={classNames("contact-form")}
       onSubmit={(e) => handleSubmit(e)}
     >
-      <p className="text-5xl font-bold my-10">
+      <div className="form-heading">
         Love to hear from you,
         <br />
         Get in touch 👋
-      </p>
+      </div>
       <div className="contact-form__fields">
         <div className="contact-form__form-group">
           <label htmlFor="firstName" className="font-bold">
@@ -107,7 +105,7 @@ const ContactForm = () => {
         </div>
         <div className="contact-form__form-group">
           <label htmlFor="email" className="font-bold">
-            Your Email
+            Email
           </label>
           <input
             id="email"
@@ -118,7 +116,7 @@ const ContactForm = () => {
             required={true}
             value={formData.email}
             onChange={(e) => handleChange(e)}
-            placeholder="johndoe@email.com"
+            placeholder="Ex: johndoe@email.com"
           />
         </div>
         <div className="contact-form__form-group">
@@ -154,12 +152,12 @@ const ContactForm = () => {
           />
         </div>
         <div className="contact-form__form-group">
-          <label htmlFor="country" className="font-bold">
+          <label htmlFor="location" className="font-bold">
             Location
           </label>
           <select
-            id="country"
-            name="country"
+            id="location"
+            name="location"
             required={true}
             defaultValue=""
             onChange={(e) => handleSelect(e)}
