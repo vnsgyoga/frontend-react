@@ -15,9 +15,7 @@ const Navbar = () => {
         <Link to="#about" className="link">About</Link>
         <Link to="#contact" className="link">Contact</Link>
         </div>
-        <button className={menuOpen ? "nav-button" : "nav-button close" } onClick={handleChange}>
-          <Icon name="hamburger-menu"/>
-        </button>
+          <Icon name={menuOpen ? "hamburger-menu" : "close-icon" } className={menuOpen ? "nav-button" : "nav-button close" } onClick={handleChange}/>
       </div>
     )
   

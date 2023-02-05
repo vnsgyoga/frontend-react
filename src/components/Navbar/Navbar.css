@@ -13,20 +13,9 @@
     color: #EC7545;
 }
 
-button {
-    background-color: #2B3241;
-    border: none;
-    cursor: pointer;
-}
-
 .nav-button {
     display: none;
 }
-
-.isMenu {
-    transform: translate(100%);
-}
-
 
 @media (max-width: 768px) {
 

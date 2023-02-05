@@ -13,6 +13,10 @@
     color: white;
 }
 
+.hero-section {
+    margin-top: 4.5em;
+}
+
 .hero-section-content {
     font-family: Helvetica;
     text-align: left;
