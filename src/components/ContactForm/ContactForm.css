@@ -11,7 +11,7 @@
   font-weight: 700;
 }
 
-.contact-form {
+#contact-form {
   padding: 2em 10em;
   margin: 0 auto;
   display: flex;
@@ -64,7 +64,7 @@ select:focus {
 }
 
 @media (max-width: 768px) {
-  .contact-form {
+  #contact-form {
     padding: 2em 4em;
   }
 
@@ -78,7 +78,7 @@ select:focus {
     grid-template-columns: 100%;
   }
 
-  .contact-form {
+  #contact-form {
     padding: 2em 2em;
   }
 
