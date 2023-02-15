@@ -1,5 +1,4 @@
 import { ChangeEvent, FormEvent, useState } from "react"
-import classNames from "classnames"
 import axios from "axios"
 import Icon from "../Icon/Icon"
 import countries from "../../constants/countries.json"
@@ -42,7 +41,7 @@ const ContactForm = () => {
     e.preventDefault() // prevents the submit button from refreshing the page
     setIsLoading(true)
     axios
-      .post("/submit", formData)
+      .post(`${process.env.REACT_APP_API_URL}/submit`, formData)
       .then((res) => {
         setIsSubmitted(true)
         setError(null)
@@ -56,15 +55,13 @@ const ContactForm = () => {
       .finally(() => {
         setTimeout(() => {
           setError(null)
+          setIsSubmitted(false)
         }, 4000)
       })
   }
 
   return (
-    <form
-      className={classNames("contact-form")}
-      onSubmit={(e) => handleSubmit(e)}
-    >
+    <form id="contact-form" onSubmit={(e) => handleSubmit(e)}>
       <div className="form-heading">
         Love to hear from you,
         <br />
@@ -181,10 +178,15 @@ const ContactForm = () => {
             size={20}
           />
         </button>
+        {error && (
+          <div className="text-red-700">
+            Submitted failed, please try again.
+          </div>
+        )}
+        {isSubmitted && (
+          <div className="text-green-700">Submitted successfully!</div>
+        )}
       </div>
-
-      {error && <div>Submitted failed, please try again.</div>}
-      {isSubmitted && <div>Submitted successfully!</div>}
     </form>
   )
 }
