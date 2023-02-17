@@ -43,7 +43,7 @@ const ImageSlider = ({ slides }: Props) => {
   }, [isClicked])
 
   return (
-    <div className="w-[600px] md:w-[700px] lg:w-[1000px]  relative">
+    <div className="w-[600px] md:w-[700px] lg:w-[1000px] relative">
       <div
         className={classNames(
           "w-full h-full flex flex-col items-center justify-center",
@@ -55,12 +55,12 @@ const ImageSlider = ({ slides }: Props) => {
         <img
           src={slides[currentIndex].imgUrl}
           alt=""
-          className="w-16 h-16 md:w-24 md:h-24 lg:w-32 lg:h-32 object-cover rounded-full"
+          className="w-20 h-20 md:w-26 md:h-26 lg:w-34 lg:h-34 object-cover rounded-full"
         />
-        <p className="max-w-[280px] sm:max-w-xs md:max-w-lg lg:max-w-xl text-center pt-8 md:pt-10 lg:pt-12 pb-5 lg:pb-7 font-secondary text-regular md:text-h3 tracking-wide">
+        <p className="max-w-[280px] sm:max-w-xs md:max-w-lg lg:max-w-xl text-center pt-8 md:pt-10 lg:pt-12 pb-5 lg:pb-7 text-regular md:text-h3 px-3 sm:px-0">
           {slides[currentIndex].script}
         </p>
-        <p className="font-secondary text-regular-sm md:text-h5 tracking-wide">
+        <p className="font-secondary text-regular-sm md:text-h5 text-center">
           {slides[currentIndex].author} - {slides[currentIndex].position} at{" "}
           {slides[currentIndex].company}
         </p>
