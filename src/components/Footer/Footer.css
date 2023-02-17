@@ -67,16 +67,16 @@
 
 .footer-logo {
   display: flex;
-  left: 243px;
-  top: 397px;
   padding-top: 30px;
 }
 
-.logo {
-  width: 20px;
-  height: 20px;
+.footer-logo__logo {
+  width: 30px;
+  height: 30px;
   margin: 0 15px 5px 0;
   max-width: 90%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .sign {
@@ -84,6 +84,7 @@
   justify-content: space-between;
   padding-top: 30px;
 }
+
 .career2023 {
   font-style: normal;
   font-weight: 700;
@@ -122,21 +123,30 @@
     max-width: 100%;
     font-size: 26px;
   }
-  
+
   .policy {
     margin: 10px;
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 425px) {
   .footer {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+    padding: 4em 1em;
   }
 
   .footer-container {
     max-width: 100%;
     font-size: 26px;
+  }
+
+  .sign > p {
+    font-size: 13px;
+  }
+
+  .policy {
+    margin: 0;
   }
 }

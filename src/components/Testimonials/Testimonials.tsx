@@ -14,7 +14,7 @@ const Testimonials = () => {
     },
     {
       imgUrl: image2,
-      script: `“I'm so grateful to Career Bliss. I had been feeling really lost in my career after my company's downsizing last year and thought I would never find a job that I liked and was satisfied with. But thanks to them, I was able to get a perfect position that was exactly what I wanted! And it all happened in a very short time! It's been an absolute blessing for me.”`,
+      script: `“I'm so grateful to Career Bliss. I'd been feeling really lost in my career after my company's downsizing last year, thought I would never find a job that I liked and was satisfied with. But thanks to them, I was able to get a perfect position that was exactly what I wanted! And it all happened in a very short time! It's an absolute blessing for me.”`,
       author: "James Berk",
       position: "Software Engineer",
       company: "WeCode",
