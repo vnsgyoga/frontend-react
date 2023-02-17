@@ -96,14 +96,6 @@
     padding: 2em 1em;
   }
 
-  .about-mission-description > p {
-    /* font-family: "Helvetica Neue"; */
-  }
-
-  .mission--description {
-    font-size: 15px;
-  }
-
   .about-mission-col-container {
     margin: 2em 1.5em;
   }
@@ -114,5 +106,9 @@
 
   .mission--title {
     font-size: 20px;
+  }
+
+  .mission--description {
+    font-size: 15px;
   }
 }

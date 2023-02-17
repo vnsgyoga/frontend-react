@@ -54,7 +54,7 @@ const About = () => {
   })
 
   return (
-    <div className="h-screen text-center about-section" id="about">
+    <div className="h-screen text-center about-section">
       <h1 className="about-mission-title">Our Mission</h1>
       <div className="about-mission-description about-inner-layout">
         <p>
