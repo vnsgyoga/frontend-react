@@ -2,6 +2,10 @@
   margin: 0 80px;
 }
 
+.nav-links {
+  display: flex;
+}
+
 .link {
   color: white;
   padding: 0 30px;

@@ -5,63 +5,41 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  padding: 6em 4em;
 }
 
 .footer-title {
-  font-style: normal;
   font-size: 21px;
-  font-weight: 700;
-  line-height: 24px;
   display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.005em;
+}
+
+.footer-link {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  display: inline-flex;
   align-items: center;
   text-align: center;
   letter-spacing: 0.005em;
   text-transform: capitalize;
   color: #ffffff;
-  mix-blend-mode: normal;
-  max-width: 90%;
+  cursor: pointer;
 }
 
-.footer-link-home {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.005em;
-  text-transform: capitalize;
+.footer-link:hover {
+  color: #ec7545;
+}
+
+.footer-link.home {
   padding-top: 30px;
-  color: #ffffff;
 }
 
-.footer-link-about {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.005em;
-  text-transform: capitalize;
-  color: #ffffff;
-  padding-top: 15px;
-}
-
-.footer-link-contact {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.005em;
-  text-transform: capitalize;
-  color: #ffffff;
+.footer-link.about,
+.footer-link.contact {
   padding-top: 15px;
 }
 
@@ -81,42 +59,18 @@
 
 .sign {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-top: 30px;
-}
-
-.career2023 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: left;
-  text-align: left;
-  letter-spacing: 0.005em;
-  text-transform: capitalize;
-  color: #ffffff;
+  font-size: 14px;
 }
 
 .policy {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.005em;
-  text-transform: capitalize;
-  color: #ffffff;
-  margin-right: 30%;
+  margin-left: 2em;
 }
 
 @media (max-width: 768px) {
   .footer {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+    padding: 4em 3em;
   }
 
   .footer-container {
@@ -125,15 +79,12 @@
   }
 
   .policy {
-    margin: 10px;
+    margin-left: 10px;
   }
 }
 
 @media (max-width: 425px) {
   .footer {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
     padding: 4em 1em;
   }
 

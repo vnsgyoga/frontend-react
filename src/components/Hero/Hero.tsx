@@ -1,3 +1,4 @@
+import { scrollToSection } from "../../utils/scrollToSection"
 import "./Hero.css"
 
 const Hero = () => {
@@ -8,9 +9,9 @@ const Hero = () => {
         <p className="hero-section-paragraph pb-[15px] shadow-effect">
           Empower your career & academic with focus, balance and joy
         </p>
-        <a href="#contact">
-          <button className="hero-btn">Contact Us</button>
-        </a>
+        <button className="hero-btn" onClick={() => scrollToSection("contact")}>
+          Contact Us
+        </button>
       </div>
     </div>
   )

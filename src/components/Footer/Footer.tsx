@@ -3,6 +3,7 @@ import FacebookLogo from "../../assets/images/icons/Facebook.png"
 import TwitterLogo from "../../assets/images/icons/Twitter.png"
 import EventbriteLogo from "../../assets/images/icons/eventbrite.png"
 import MeetupLogo from "../../assets/images/icons/Meetup.png"
+import { scrollToSection } from "../../utils/scrollToSection"
 
 const Footer = () => {
   return (
@@ -11,19 +12,28 @@ const Footer = () => {
         <div className="footer-title">Career Bliss</div>
         <ul>
           <li>
-            <a className="footer-link-home" href="/">
+            <div
+              className="footer-link home"
+              onClick={() => scrollToSection("home")}
+            >
               Home
-            </a>
+            </div>
           </li>
           <li>
-            <a className="footer-link-about" href="#about">
+            <div
+              className="footer-link about"
+              onClick={() => scrollToSection("about")}
+            >
               About
-            </a>
+            </div>
           </li>
           <li>
-            <a className="footer-link-contact" href="#contact">
+            <div
+              className="footer-link contact"
+              onClick={() => scrollToSection("contact")}
+            >
               Contact
-            </a>
+            </div>
           </li>
         </ul>
       </div>
