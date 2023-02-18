@@ -71,9 +71,9 @@
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 425px) {
   .background {
-    background-position: left 500px center;
+    background-position: left 500px right;
   }
 
   .hero-section-content {

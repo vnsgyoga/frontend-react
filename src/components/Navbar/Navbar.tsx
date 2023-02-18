@@ -1,25 +1,27 @@
-import { Link } from "react-router-dom"
 import Icon from "../Icon/Icon"
 import { useState } from "react"
 import "./Navbar.css"
+import { scrollToSection } from "../../utils/scrollToSection"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+
   function handleChange() {
     setMenuOpen(!menuOpen)
   }
+
   return (
     <div className="flex justify-between">
       <div className={menuOpen ? "nav-links" : "nav-links expanded"}>
-        <a href="/" className="link">
+        <div onClick={() => scrollToSection("home")} className="link">
           Home
-        </a>
-        <a href="#about" className="link">
+        </div>
+        <div onClick={() => scrollToSection("about")} className="link">
           About
-        </a>
-        <a href="#contact" className="link">
+        </div>
+        <div onClick={() => scrollToSection("contact")} className="link">
           Contact
-        </a>
+        </div>
       </div>
       <Icon
         name={menuOpen ? "hamburger-menu" : "close-icon"}
