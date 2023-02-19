@@ -1,9 +1,9 @@
-import classNames from "classnames"
+import { ChangeEvent, FormEvent, useState } from "react"
 import axios from "axios"
+import Icon from "../Icon/Icon"
+import countries from "../../constants/countries.json"
 
 import "./ContactForm.css"
-import { ChangeEvent, FormEvent, useState } from "react"
-import Icon from "../Icon/Icon"
 
 const ContactForm = () => {
   const defaultFormData = {
@@ -11,7 +11,7 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    city: "",
+    location: "",
     companyName: "",
   }
 
@@ -20,9 +20,10 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    city: "",
+    location: "",
     companyName: "",
   })
+
   const [error, setError] = useState(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -32,40 +33,40 @@ const ContactForm = () => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
+  const handleSelect = (e: any) => {
+    setFormData({ ...formData, location: e.target.value })
+  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault() // prevents the submit button from refreshing the page
     setIsLoading(true)
     axios
-      .post("/submit", formData)
+      .post(`${process.env.REACT_APP_API_URL}/submit`, formData)
       .then((res) => {
-        console.log(res)
         setIsSubmitted(true)
         setError(null)
         setIsLoading(false)
         setFormData(defaultFormData)
       })
       .catch((err) => {
-        console.log(err)
         setIsLoading(false)
         setError(err)
       })
       .finally(() => {
         setTimeout(() => {
           setError(null)
+          setIsSubmitted(false)
         }, 4000)
       })
   }
 
   return (
-    <form
-      className={classNames("contact-form")}
-      onSubmit={(e) => handleSubmit(e)}
-    >
-      <p className="text-5xl font-bold my-10">
+    <form id="contact-form" onSubmit={(e) => handleSubmit(e)}>
+      <div className="form-heading">
         Love to hear from you,
         <br />
         Get in touch 👋
-      </p>
+      </div>
       <div className="contact-form__fields">
         <div className="contact-form__form-group">
           <label htmlFor="firstName" className="font-bold">
@@ -80,6 +81,7 @@ const ContactForm = () => {
             required={true}
             value={formData.firstName}
             onChange={(e) => handleChange(e)}
+            placeholder="John"
           />
         </div>
         <div className="contact-form__form-group">
@@ -95,11 +97,12 @@ const ContactForm = () => {
             required={true}
             value={formData.lastName}
             onChange={(e) => handleChange(e)}
+            placeholder="Doe"
           />
         </div>
         <div className="contact-form__form-group">
           <label htmlFor="email" className="font-bold">
-            Your Email
+            Email
           </label>
           <input
             id="email"
@@ -110,6 +113,7 @@ const ContactForm = () => {
             required={true}
             value={formData.email}
             onChange={(e) => handleChange(e)}
+            placeholder="Ex: johndoe@email.com"
           />
         </div>
         <div className="contact-form__form-group">
@@ -125,21 +129,7 @@ const ContactForm = () => {
             required={true}
             value={formData.phone}
             onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className="contact-form__form-group">
-          <label htmlFor="city" className="font-bold">
-            City
-          </label>
-          <input
-            id="city"
-            maxLength={40}
-            name="city"
-            size={20}
-            type="text"
-            required={true}
-            value={formData.city}
-            onChange={(e) => handleChange(e)}
+            placeholder="Your phone number"
           />
         </div>
         <div className="contact-form__form-group">
@@ -155,7 +145,29 @@ const ContactForm = () => {
             required={true}
             value={formData.companyName}
             onChange={(e) => handleChange(e)}
+            placeholder="Your company name"
           />
+        </div>
+        <div className="contact-form__form-group">
+          <label htmlFor="location" className="font-bold">
+            Location
+          </label>
+          <select
+            id="location"
+            name="location"
+            required={true}
+            defaultValue=""
+            onChange={(e) => handleSelect(e)}
+          >
+            <option value="" disabled>
+              Select your country
+            </option>
+            {countries.map((country) => (
+              <option key={country.id} value={country.name}>
+                {country.name}
+              </option>
+            ))}
+          </select>
         </div>
         <button type="submit" name="submit" className="contact-form__btn">
           {isLoading ? "Loading" : "Send"}
@@ -166,10 +178,15 @@ const ContactForm = () => {
             size={20}
           />
         </button>
+        {error && (
+          <div className="text-red-700">
+            Submitted failed, please try again.
+          </div>
+        )}
+        {isSubmitted && (
+          <div className="text-green-700">Submitted successfully!</div>
+        )}
       </div>
-
-      {error && <div>Submitted failed, please try again.</div>}
-      {isSubmitted && <div>Submitted successfully!</div>}
     </form>
   )
 }

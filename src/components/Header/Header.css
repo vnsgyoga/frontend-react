@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75em 1.25em;
+  z-index: 1000;
+}
+
+.header > svg {
+  fill: white;
+}
+
+.header > svg > path {
+  fill: white;
+}
+
+.header > svg > g {
+  fill: white;
+}
+
+.header > svg > g > path {
+  fill: white;
+}
+
+.logo {
+  object-fit: cover;
+  width: 70px;
+  height: 45px;
+  margin: 0 35px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin: 0;
+    height: 40px;
+  }
+}

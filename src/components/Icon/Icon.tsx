@@ -3,10 +3,16 @@ import React, { SVGProps } from "react"
 
 import { ReactComponent as ArrowUpRight } from "../../assets/images/icons/arrow-up-right.svg"
 import { ReactComponent as ThreeDots } from "../../assets/images/icons/3-dots-horizontal.svg"
+import { ReactComponent as CBLogo } from "../../assets/images/cb-logo.svg"
+import { ReactComponent as CloseIcon } from "../../assets/images/icons/close-icon.svg"
+import { ReactComponent as HamburgerMenu } from "../../assets/images/icons/hamburger-menu.svg"
 
 const ICON_NAME_COMPONENT_MAP = {
   "arrow-up-right": ArrowUpRight,
   "three-dots": ThreeDots,
+  "cb-logo": CBLogo,
+  "close-icon": CloseIcon,
+  "hamburger-menu": HamburgerMenu
 }
 
 export type IconName = keyof typeof ICON_NAME_COMPONENT_MAP
